@@ -1,0 +1,26 @@
+/* ================================ */
+/* Botón Flotante de Contacto       */
+/* ================================ */
+.floating-btn {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: #4a00e0;
+  color: #fff;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.floating-btn:hover {
+  background-color: #8e2de2;
+  transform: scale(1.1);
+}

@@ -1,0 +1,81 @@
+/* ================================ */
+/* Reset y configuración global     */
+/* ================================ */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  background-color: #f0f2f5;
+  color: #000;
+}
+
+/* ================================ */
+/* Contenedor principal y layout    */
+/* ================================ */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+}
+
+/* Main central */
+main.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+/* Título principal */
+main.main h2 {
+  font-size: 2rem;
+  color: #4a00e0;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Sección de productos */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 2rem;
+}
+
+/* ================================ */
+/* Responsive general               */
+/* ================================ */
+@media (max-width: 1200px) {
+  .products {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  main.main {
+    padding: 1.5rem 1rem;
+  }
+
+  .products {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  main.main h2 {
+    font-size: 1.6rem;
+  }
+
+  .products {
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,139 @@
+/* ================================ */
+/* Navbar Principal                 */
+/* ================================ */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.95); /* semi-transparente para efecto moderno */
+  backdrop-filter: blur(8px); /* efecto glass */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 500;
+  transition: background 0.3s, box-shadow 0.3s, padding 0.3s;
+}
+
+.navbar:hover {
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+  padding: 1rem 2.5rem;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #4a00e0;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: transform 0.2s, color 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.08);
+  color: #8e2de2;
+}
+
+/* Lista de enlaces */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  transition: all 0.3s ease;
+}
+
+.nav-links li {
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  transition: background 0.25s, color 0.25s, transform 0.2s;
+}
+
+.nav-links li.active,
+.nav-links li:hover {
+  background-color: #4a00e0;
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ================================ */
+/* Hamburger para móviles           */
+/* ================================ */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 600;
+}
+
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #4a00e0;
+  border-radius: 3px;
+  transition: all 0.4s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ================================ */
+/* Responsive: móviles               */
+/* ================================ */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 70%;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    box-shadow: -6px 0 16px rgba(0,0,0,0.15);
+    transition: right 0.35s ease, backdrop-filter 0.3s;
+    padding: 2rem 0;
+    border-radius: 0 0 0 12px;
+  }
+
+  .nav-links.open {
+    right: 0;
+  }
+
+  .nav-links li {
+    font-size: 1.4rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  /* Fondo difuminado detrás del menú */
+  .nav-links::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(2px);
+    z-index: -1;
+  }
+}
